@@ -1,6 +1,40 @@
-*.class
-
-# Package Files #
 *.jar
-*.war
-*.ear
+package testebubble;
+
+import javax.swing.JOptionPane;
+
+public class Testebubble {
+
+    public static void main(String[] args) {
+        int vet[] = new int[6];
+        Carrega(vet);
+        Ordena(vet);
+        Mostra(vet);
+    }//Main
+
+    public static void Carrega(int vet[]) {       
+        for (int i = 0; i < vet.length; i++) {
+            vet[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite o Valor da posição " + i));
+        }
+    }//Carrega
+
+    public static void Ordena(int vet[]) {
+        int aux;
+        for (int i = 0; i < vet.length; i++) {
+            for (int j = 0; j < vet.length-1; j++) {
+                if (vet[j] > vet[j+1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j+1];
+                    vet[j+1] = aux;
+                }
+            }
+        }
+    }//Ordena
+    
+    public static void Mostra (int vet[]){
+        for (int i = 0; i < +vet.length; i++) {
+            System.out.println("Posição "+i+" = "+vet[i]);
+        }                
+    }//Mostra
+    
+}//Class
